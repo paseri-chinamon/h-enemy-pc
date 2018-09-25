@@ -44,17 +44,17 @@ function draw() {
 
 function mouseEvent(X, Y) {
 
-  if ((Math.pow(X - a_button['x'], 2) + Math.pow(Y - a_button['y'], 2)) <= Math.pow(button_radius, 2)) {
+  if ((Math.pow(X - a_button['x'], 2) + Math.pow(Y - a_button['y'], 2)) <= Math.pow(button_radius / 2, 2)) {
     a_data['action'] = true;
     playerAction(a_data);
   }
 
-  if ((Math.pow(X - b_button['x'], 2) + Math.pow(Y - b_button['y'], 2)) <= Math.pow(button_radius, 2)) {
+  if ((Math.pow(X - b_button['x'], 2) + Math.pow(Y - b_button['y'], 2)) <= Math.pow(button_radius / 2, 2)) {
     b_data['action'] = true;
     playerAction(b_data);
   }
 
-  if ((Math.pow(X - pad_pos['x'], 2) + Math.pow(Y - pad_pos['y'], 2)) <= Math.pow(button_radius, 2)) {
+  if ((Math.pow(X - pad_pos['x'], 2) + Math.pow(Y - pad_pos['y'], 2)) <= Math.pow(pad_radius / 2, 2)) {
     pad_data['action'] = {
       'x' : X - pad_pos['x'],
       'y': Y - pad_pos['y']
@@ -69,17 +69,17 @@ function mouseEvent(X, Y) {
 
 function touchEvent(_touches) {
   for (var i = 0; i < _touches.length; i++) {
-    if ((Math.pow(_touches[i].x - a_button['x'], 2) + Math.pow(_touches[i].y - a_button['y'], 2)) <= Math.pow(button_radius, 2)) {
+    if ((Math.pow(_touches[i].x - a_button['x'], 2) + Math.pow(_touches[i].y - a_button['y'], 2)) <= Math.pow(button_radius / 2, 2)) {
       a_data['action'] = true;
       playerAction(a_data);
     }
 
-    if ((Math.pow(_touches[i].x - b_button['x'], 2) + Math.pow(_touches[i].y - b_button['y'], 2)) <= Math.pow(button_radius, 2)) {
+    if ((Math.pow(_touches[i].x - b_button['x'], 2) + Math.pow(_touches[i].y - b_button['y'], 2)) <= Math.pow(button_radius / 2, 2)) {
       b_data['action'] = true;
       playerAction(b_data);
     }
 
-    if ((Math.pow(_touches[i].x - pad_pos['x'], 2) + Math.pow(_touches[i].y - pad_pos['y'], 2)) <= Math.pow(button_radius, 2)) {
+    if ((Math.pow(_touches[i].x - pad_pos['x'], 2) + Math.pow(_touches[i].y - pad_pos['y'], 2)) <= Math.pow(pad_radius / 2, 2)) {
       pad_data['action'] = {
         'x': _touches[i].x - pad_pos['x'],
         'y': _touches[i].y - pad_pos['y']
