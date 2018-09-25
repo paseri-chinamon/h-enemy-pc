@@ -15,9 +15,9 @@ function setup() {
   pad_pos['x'] = windowWidth / 4;
   pad_pos['y'] = windowHeight / 2;
   a_button['x'] = (windowWidth / 8) * 5;
-  a_button['y'] = (windowHeight / 4) * 2;
+  a_button['y'] = (windowHeight / 4) * 2.5;
   b_button['x'] = (windowWidth / 8) * 6.5;
-  b_button['y'] = (windowHeight / 4) * 2.5;
+  b_button['y'] = (windowHeight / 4) * 2;
 
   pad_data['button'] = 'pad';
   a_data['button'] = 'a';
@@ -30,13 +30,13 @@ function draw() {
   background(245, 245, 245);
 
   fill(190, 190, 190);
-  ellipse(windowWidth / 4, windowHeight / 2, pad_radius, pad_radius);
+  ellipse(pad_pos['x'], pad_pos['y'], pad_radius, pad_radius);
 
   fill(255, 0, 0);
-  ellipse((windowWidth / 8) * 5, (windowHeight / 4) * 2.5, button_radius, button_radius);
+  ellipse(a_button['x'], a_button['y'], button_radius, button_radius);
 
   fill(0, 0, 255);
-  ellipse((windowWidth / 8) * 6.5, (windowHeight / 4) * 2, button_radius, button_radius);
+  ellipse(b_button['x'], b_button['y'], button_radius, button_radius);
 
   mouseEvent(mouseX, mouseY);
   touchEvent(touches);

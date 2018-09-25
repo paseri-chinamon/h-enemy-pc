@@ -1,4 +1,4 @@
-var socketio = io.connect('https://phonegameserver.herokuapp.com/');
+var socketio = io.connect('https://phonegameserver.herokuapp.com');
 var socket_id = 0;
 
 //websocketコールバックの準備
@@ -9,6 +9,14 @@ socketio.on("playerConnectNotice", function (data) {
   }
   else {
     console.log('idないよ');
+  }
+});
+
+socketio.on("gamePlayerNotice", function (message) {
+  if ( ! message['status']) {
+    console.log(message);
+    socketio.disconnect();
+    location.href = "./start.html";
   }
 });
 
