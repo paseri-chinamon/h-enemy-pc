@@ -27,6 +27,9 @@ function serverConnected() {
 window.onload = function () {
   serverConnected();
 }
+window.addEventListener('touchmove', function (event) {
+  event.preventDefault();
+});
 
 function playerAction(data) {
   socketio.emit("playerAction", socket_id, data);
